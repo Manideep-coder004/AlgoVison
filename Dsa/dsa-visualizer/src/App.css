@@ -2831,3 +2831,61 @@ button:disabled {
     0 0 8px rgba(52, 211, 153, 0.7);
 } 
 
+/* =========================================================
+   MOBILE CONTROLS FIX
+========================================================= */
+
+@media (max-width: 560px) {
+  .controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+    margin-top: 14px;
+  }
+
+  .controls .control-button,
+  .controls .play-button {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 6px;
+    font-size: 9px;
+    box-sizing: border-box;
+  }
+
+  /* Keep button text visible on phone */
+  .controls .control-button span {
+    display: inline;
+  }
+
+  /* Put speed slider on its own full row */
+  .controls .speed-control {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 4px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .controls .speed-control input {
+    width: 100%;
+    max-width: 220px;
+    flex: 1;
+  }
+}
+
+@media (max-width: 390px) {
+  .controls {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .controls .play-button {
+    grid-column: 1 / -1;
+  }
+
+  .controls .speed-control {
+    grid-column: 1 / -1;
+  }
+}
