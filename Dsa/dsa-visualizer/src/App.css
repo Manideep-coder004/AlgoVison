@@ -2840,14 +2840,15 @@ button:disabled {
     display: flex !important;
     flex-wrap: wrap !important;
     align-items: stretch !important;
-    justify-content: space-between !important;
     gap: 8px !important;
     width: 100% !important;
     margin-top: 14px !important;
   }
 
-  /* Reset */
-  .controls .control-button:nth-child(1) {
+  /* =========================
+     RESET
+  ========================= */
+  .controls > .control-button:nth-child(1) {
     order: 1 !important;
     flex: 1 1 0 !important;
     width: auto !important;
@@ -2855,8 +2856,10 @@ button:disabled {
     margin: 0 !important;
   }
 
-  /* Previous */
-  .controls .control-button:nth-child(2) {
+  /* =========================
+     PREVIOUS
+  ========================= */
+  .controls > .control-button:nth-child(2) {
     order: 2 !important;
     flex: 1 1 0 !important;
     width: auto !important;
@@ -2864,8 +2867,10 @@ button:disabled {
     margin: 0 !important;
   }
 
-  /* Run */
-  .controls .play-button {
+  /* =========================
+     RUN / PAUSE
+  ========================= */
+  .controls > .run-button {
     order: 3 !important;
     flex: 1 1 0 !important;
     width: auto !important;
@@ -2873,28 +2878,38 @@ button:disabled {
     margin: 0 !important;
   }
 
-  /* Next - FULL SEPARATE ROW */
-  .controls .control-button:nth-child(4) {
+  /* =========================
+     NEXT
+  ========================= */
+  .controls > .control-button:nth-child(4) {
     order: 4 !important;
+
     flex: 0 0 100% !important;
+
     width: 100% !important;
     min-width: 100% !important;
+
     margin: 0 !important;
   }
 
-  /* SPEED - FULL SEPARATE ROW */
-  .controls .speed-control {
+  /* =========================
+     SPEED
+  ========================= */
+  .controls > .speed-control {
     order: 5 !important;
 
     flex: 0 0 100% !important;
+
     width: 100% !important;
     min-width: 100% !important;
 
-    height: 44px !important;
+    height: 50px !important;
+
     margin: 0 !important;
-    padding: 0 6px !important;
+    padding: 0 8px !important;
 
     display: flex !important;
+
     align-items: center !important;
     justify-content: center !important;
 
@@ -2905,19 +2920,26 @@ button:disabled {
 
     background: transparent !important;
     border: 0 !important;
+
+    clear: both !important;
   }
 
-  .controls .speed-control input {
+  /* Speed slider */
+  .controls > .speed-control input {
     flex: 1 1 auto !important;
+
     width: auto !important;
     min-width: 0 !important;
     max-width: none !important;
-    margin: 0 !important;
+
+    margin: 0 8px !important;
   }
 
-  .controls .control-button,
-  .controls .play-button {
+  /* All buttons */
+  .controls > .control-button,
+  .controls > .run-button {
     min-height: 42px !important;
+
     box-sizing: border-box !important;
   }
 }
