@@ -2832,60 +2832,85 @@ button:disabled {
 } 
 
 /* =========================================================
-   MOBILE CONTROLS FIX
+   FINAL MOBILE CONTROLS FIX
 ========================================================= */
 
 @media (max-width: 560px) {
+
   .controls {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    width: 100%;
-    margin-top: 14px;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 14px !important;
+    align-items: stretch !important;
+  }
+
+  /* RUN */
+  .controls .play-button {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 11px 4px !important;
+    font-size: 9px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* RESET */
+  .controls .control-button:nth-child(1) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+  }
+
+  /* PREVIOUS */
+  .controls .control-button:nth-child(2) {
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+  }
+
+  /* NEXT */
+  .controls .control-button:nth-child(4) {
+    grid-column: 1 / 4 !important;
+    grid-row: 2 !important;
+    width: 100% !important;
+  }
+
+  /* SPEED - completely separate row */
+  .controls .speed-control {
+    grid-column: 1 / 4 !important;
+    grid-row: 3 !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 4px 0 0 !important;
+    padding: 4px 2px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+
+    box-sizing: border-box !important;
+  }
+
+  .controls .speed-control input {
+    width: auto !important;
+    max-width: none !important;
+    flex: 1 !important;
+    min-width: 0 !important;
   }
 
   .controls .control-button,
   .controls .play-button {
-    width: 100%;
-    min-width: 0;
-    padding: 10px 6px;
-    font-size: 9px;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
+    min-height: 42px !important;
   }
 
-  /* Keep button text visible on phone */
   .controls .control-button span {
-    display: inline;
-  }
-
-  /* Put speed slider on its own full row */
-  .controls .speed-control {
-    grid-column: 1 / -1;
-    width: 100%;
-    margin: 4px 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .controls .speed-control input {
-    width: 100%;
-    max-width: 220px;
-    flex: 1;
-  }
-}
-
-@media (max-width: 390px) {
-  .controls {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .controls .play-button {
-    grid-column: 1 / -1;
-  }
-
-  .controls .speed-control {
-    grid-column: 1 / -1;
+    display: inline !important;
   }
 }
