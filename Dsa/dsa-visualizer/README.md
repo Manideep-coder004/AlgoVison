@@ -3,6 +3,8 @@
 **AlgoVision** is a simple DSA visualizer made to understand how different
 algorithms work step by step.
 
+Deployment URL: https://algo-vison-nu.vercel.app/
+
 Instead of just looking at the code, we can enter our own values and see
 what the algorithm is doing at every step.
 
