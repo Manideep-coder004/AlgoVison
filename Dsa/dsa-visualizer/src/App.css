@@ -2832,69 +2832,106 @@ button:disabled {
 } 
 /* =========================================================
    FINAL MOBILE CONTROLS FIX
-========================================================= */
+   ========================================================= */
 
 @media (max-width: 560px) {
 
-  /* BUTTON ROW */
+  /* ---------- CONTROL BUTTONS ---------- */
+
   .controls {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr)) !important;
+
     grid-template-areas:
       "reset previous run"
       "next next next" !important;
 
     gap: 8px !important;
+
     width: 100% !important;
+
     margin-top: 14px !important;
+
+    box-sizing: border-box !important;
   }
 
   /* Reset */
   .controls .control-button:nth-child(1) {
     grid-area: reset !important;
+
     width: 100% !important;
     min-width: 0 !important;
+    min-height: 42px !important;
+
     margin: 0 !important;
+    padding: 0 6px !important;
+
+    box-sizing: border-box !important;
   }
 
   /* Previous */
   .controls .control-button:nth-child(2) {
     grid-area: previous !important;
+
     width: 100% !important;
     min-width: 0 !important;
+    min-height: 42px !important;
+
     margin: 0 !important;
+    padding: 0 6px !important;
+
+    box-sizing: border-box !important;
   }
 
-  /* Run */
+  /* Run / Pause */
   .controls .run-button {
     grid-area: run !important;
+
     width: 100% !important;
     min-width: 0 !important;
+    min-height: 42px !important;
+
     margin: 0 !important;
+    padding: 0 6px !important;
+
+    box-sizing: border-box !important;
   }
 
   /* Next */
   .controls .control-button:nth-child(4) {
     grid-area: next !important;
+
     width: 100% !important;
     min-width: 0 !important;
+    min-height: 42px !important;
+
     margin: 0 !important;
+    padding: 0 6px !important;
+
+    box-sizing: border-box !important;
   }
 
 
-  /* ================================================
-     SPEED IS OUTSIDE .controls
-     ================================================ */
+  /* ---------- SPEED CONTROL ---------- */
+
+  /*
+     IMPORTANT:
+     .speed-control is NOT inside .controls.
+     It is a separate element in App.jsx.
+  */
 
   .speed-control {
     display: flex !important;
 
     width: 100% !important;
+    max-width: 100% !important;
+
     min-width: 0 !important;
+    min-height: 45px !important;
 
-    height: 45px !important;
-
-    margin-top: 10px !important;
+    margin: 10px 0 0 0 !important;
     padding: 0 8px !important;
 
     box-sizing: border-box !important;
@@ -2902,24 +2939,84 @@ button:disabled {
     align-items: center !important;
     justify-content: center !important;
 
+    gap: 7px !important;
+
     position: static !important;
-    transform: none !important;
+    top: auto !important;
+
+    clear: both !important;
   }
 
-  .speed-control input {
-    flex: 1 !important;
+
+  /* Speed label */
+
+  .speed-label {
+    flex: 0 0 auto !important;
+
+    white-space: nowrap !important;
+
+    font-size: 7px !important;
+  }
+
+
+  /* Speed slider */
+
+  .speed-control input[type="range"] {
+    flex: 1 1 auto !important;
 
     width: auto !important;
     min-width: 0 !important;
 
-    margin: 0 8px !important;
+    height: 3px !important;
+
+    margin: 0 5px !important;
   }
 
 
-  /* Button height */
+  /* Fast / Medium / Slow */
+
+  .speed-value {
+    flex: 0 0 42px !important;
+
+    min-width: 42px !important;
+
+    text-align: right !important;
+
+    font-size: 7px !important;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .controls {
+    gap: 6px !important;
+  }
+
   .controls .control-button,
   .controls .run-button {
-    min-height: 42px !important;
-    box-sizing: border-box !important;
+    min-height: 40px !important;
+
+    font-size: 7px !important;
+
+    padding: 0 4px !important;
+  }
+
+  .speed-control {
+    padding: 0 4px !important;
+    gap: 5px !important;
+  }
+
+  .speed-label {
+    font-size: 6px !important;
+  }
+
+  .speed-value {
+    min-width: 38px !important;
+    font-size: 6px !important;
   }
 }
